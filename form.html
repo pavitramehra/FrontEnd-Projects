@@ -7,102 +7,72 @@
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-
-<style>
-    html,body {
-        height:100%;
-    }
-        .container{
-            background-image:url("road.jpeg");
-            width:100%;
-            height:100%;
-            background-size:cover;
-            background-position:center;
-            padding-top:150px;
-        }
-        h1{
-            
-            color:white;
-        }
-        .lead{
-            color:white;
-        
-        }
-        .center{
-            text-align:center;
-        }
-        p{
-            padding-top:10px;
-            padding-bottom:10px;
-        }
-        button{
-            padding-top:10px;
-        }
-        .alert{
-            margin-top:20px;
-            display:none;
-        }
-</style>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<style>
+		#wrapper{
+			width:500px;
+			margin:0 auto;
+			font-family:helvetica;
+			
+		}
+		input{
+			width:200px;
+			height:30px;
+			padding:5px;
+			border-radius:5px;
+			font-size:1.2em;
+			border:1px solid grey;
+			margin-bottom:5px;
+		}
+		label{
+			width:150px;
+			float:left;
+			padding-top:7px;
+		}
+		#sbutton{
+			margin-left:150px;
+			width:100px;
+		}
+		#error{
+			color:red;
+		}
+	</style>
+			
 </head>
 
 <body>
-    <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <h1 class="center">Weather Predictor</h1>
-                    <p class="lead center">Enter your city's name below to get a forecast about weather. </p>
-                    <form class="center">
-                        <div class="form-group">
-                            <input type="text" name="city" class="form-control" placeholder="enter your city name....." id="city"/>
-                        </div>
-                            <button class="btn btn-success btn-lg" id="find"/>Find My Weather</button>
-                    </form>
-                
-            
-                    <div id="success" class="alert alert-success">Success!</div>
-                    <div id="fail" class=" alert alert-danger">could not find the data</div>
-                                        <div id="nocity" class=" alert alert-danger">please enter a city</div>
-                    
-                    
-                </div>
-            </div>
-    </div>
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<div id="wrapper">
+	<div id="error"></div>
+	<form id="vform">
+	<label for="email">Email</label>
+	<input name="email" id="email" />
 
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script>
-    $("#find").click(function(event){
-        event.preventDefault();
-        if($("#city").val()!="")
-        {
-             $.get("scraper.php?city="+$("#city").val(),function(data){
-                    
-                    
-            
-            if(data=="")
-            {
-                $("#fail").fadeIn();
-                 $("#success").hide();
-                  $("#nocity").hide();
-            }
-            else{
-                $("#fail").hide();
-                 $("#success").html(data).fadeIn();
-                  $("#nocity").hide();
-            }
-        
-                });
-        }
-        else{
-            $("#nocity").fadeIn();
-        }
-    });
-    
-</script>
+	<label for="phone">Telephone</label>
+	<input name="phone" id="phone" />
+	
+	<label for="pass">Password</label>
+	<input name="email" type="password" id="pass1" />
+	
+	<label for="pass">Confirm Password</label>
+	<input name="pass" type="password" id="pass2" />
+	
+	<input id="sbutton" type="submit" value="Submit" />
+	</form>
+	</div>
+	<script>
+		$("#vform").submit(function(event){
+			
+		var error="";
+		event.preventDefault();	
+		if(!$.isNumeric($("#phone").val())){
+			error=error+"<br/>please enter a valid phone number";
+		}
+		if($("#pass1").val()!=$("#pass2").val()){
+			error=error+"<br />please enter a matching password";
+		}
+			$("#error").html(error);
+		});
 
+	</script>
 </body>
 </html>
