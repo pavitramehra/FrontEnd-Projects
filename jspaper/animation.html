@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <title>animation</title>
+
+
+	<script type="text/javascript" src="paper-full.min.js"></script>
+	<script type="text/paperscript" canvas="myCanvas">
+		for(var i=0;i<1000;i=i+100){
+			var circle=new Path.Circle(new Point(i,100), 20);
+			circle.fillcolor="purple";
+		}
+var myCircle = new Path.Circle(new Point(100, 70), 50);
+myCircle.fillColor = 'purple';
+		
+	</script>
+	<style>
+		#myCanvas{
+			width:100%;
+			height:100%;		
+			background:black;
+		}
+		body{
+			height:100%;
+			margin:0;
+		}
+	</style>
+	
+			
+</head>
+
+<body>
+	<canvas id="myCanvas" resize></canvas>
+	
+</body>
+</html>

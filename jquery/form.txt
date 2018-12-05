@@ -1,0 +1,33 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>first program</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<style>
+		wrapper{
+			width:500px;
+			margin:0 auto;
+		}
+			
+</head>
+
+<body>
+	<button id="11" class="led">toggle pin1</button>
+	<button id="12" class="led">toggle pin2</button>
+	<button id='13" class="led">tooggle pin3</button>
+	<script>
+		$(document).ready(function(){
+			$("led").click(function(){
+					var p=$(this).attr('id');
+					$.get("",{pin:p});
+			});
+		});
+			
+	</script>
+</body>
+</html>

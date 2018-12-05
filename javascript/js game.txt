@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <title>javascript</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />    
+</head>
+<style>
+	#box{
+		width:200px;
+		height:200px;
+		background-color:red;
+		display:none;
+	}
+</style>
+<body>
+	<div id="box"></div>
+	<script type="text/javascript">
+	
+	function makebox(){
+		settimeout(function(){
+			
+				var time=Math.random();
+				time=time*6000
+		document.getElememtById("box").style.display="block";
+		},time);
+	}
+	document.getElementById("box").onclick=function(){
+		this.style.display="none";
+		makebox();
+	}	
+	makebox();
+		
+				
+	</script>   
+
+</body>
+</html>

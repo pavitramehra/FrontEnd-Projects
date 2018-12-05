@@ -1,0 +1,73 @@
+
+<!doctype html>
+
+<html>
+
+<head>
+
+    	<title>To do list</title>
+
+    
+    	<meta charset="utf-8" />
+    
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    	<script type="text/javascript" src="jquery.min.js"></script>
+    
+	<style>
+        
+		div{
+            background:lightgrey;
+
+            			width:360px;
+		   
+             margin:0 auto;
+        	
+		   }
+    	
+	</style>
+    	
+
+</head>
+
+
+	
+<body>
+
+<div>
+    
+	<div id="container">
+        	
+		<h1>TO-DO LIST</h1>
+        
+		<input type="text">
+
+	        <ul>
+            
+		<li><span>x</span>cookie</li>
+    
+            <li><span>x</span>biscuits</li>
+    
+	        <li><span>x</span>honey</li>
+ 
+	       </ul>
+
+       </div>
+
+</div>
+
+<script>
+    
+$("li").click(function(){
+  
+     $(this).css("color","grey");
+    });
+
+</script>
+
+
+</body>
+
+</html>

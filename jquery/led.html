@@ -1,0 +1,31 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>led</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script type="text/javascript" src="jquery.min.js"></script>
+	
+			
+</head>
+
+<body>
+
+	<button id="11" class="led">toggle pin1</button>
+	<button id="12" class="led">toggle pin2</button>
+	<button id="13" class="led">toggle pin3</button>
+	
+	<script>
+		$(document).ready(function(){
+			$(".led").click(function(){
+					var p=$(this).attr('id');
+					$.get("http://127.0.0.1:3000",{p});
+			});
+		});
+			
+	</script>
+</body>
+</html>

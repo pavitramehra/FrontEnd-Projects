@@ -1,0 +1,20 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>first program</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+<div>
+    <a name="top"/>
+    <h1>GOOGLE</h1>
+    <h2>search engine</h2>
+	<img src="images/sea.jpg" />
+</div>
+</body>
+</html>
